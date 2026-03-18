@@ -5,6 +5,8 @@
 dependencies:
   flutter:
     sdk: flutter
+
+  cupertino_icons: ^1.0.8
   flutter_bloc: ^9.1.1
   bloc: ^9.1.0
   freezed_annotation: ^3.0.0
