@@ -53,9 +53,6 @@ releaseApkSplit:
 shaKey:
 	./gradlew signingReport
 
-keyForReleaseAndroidFirebaseFix:
-	cd android && keytool -list -v -keystore upload-keystore.jks -alias upload
-
 releaseApk:
 	fvm flutter build apk --release
 

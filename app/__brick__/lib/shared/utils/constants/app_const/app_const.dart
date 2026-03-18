@@ -7,7 +7,6 @@ class AppConst {
   static const userId = 'USER_ID';
   static const firstName = 'FIRST_NAME';
   static const pushNotification = 'PUSH_NOTIFICATION';
-  static const fcmToken = 'FCM_TOKEN';
   static const isFirstLaunch = 'IS_FIRST_LAUNCH';
   static const isCompletedNewUser = 'IS_COMPLETED_NEW_USER';
   static const isReaded = 'IS_READED';

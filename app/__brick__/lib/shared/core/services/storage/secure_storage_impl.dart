@@ -18,7 +18,6 @@ class SecureStorageImpl implements SecureStorage {
     if (localStorage.getBool(AppConst.isFirstLaunch)) {
       await deleteAllValues();
       await localStorage.remove(AppConst.isCompletedNewUser);
-      await localStorage.remove(AppConst.fcmToken);
       localStorage.setBool(AppConst.isFirstLaunch, false);
     }
   }
