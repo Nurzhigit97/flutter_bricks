@@ -2,7 +2,9 @@
 # После `mason make app` скопируй нужные строки в свой pubspec.yaml и выполни flutter pub get.
 
 dependencies:
-  # DI & state
+  flutter:
+    sdk: flutter
+
   get_it: ^7.6.0
   flutter_bloc: ^8.1.0
   equatable: ^2.0.5
