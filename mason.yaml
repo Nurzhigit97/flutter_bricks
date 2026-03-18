@@ -1,0 +1,9 @@
+# Конфиг для репозитория с bricks (когда bricks — отдельный проект в GitHub).
+# В новом проекте подключай bricks через:
+#   mason add app --git-url https://github.com/USER/REPO.git --git-path app
+#   mason add feature --git-url https://github.com/USER/REPO.git --git-path feature
+bricks:
+  app:
+    path: app
+  feature:
+    path: feature

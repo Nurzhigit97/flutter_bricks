@@ -1,0 +1,19 @@
+# Зависимости, которые нужны сгенерированному коду фичи.
+# Post-gen хук добавляет их в pubspec.yaml проекта, если их ещё нет
+# (чтобы в новом проекте не копировать вручную).
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  bloc: ^9.1.0
+  freezed_annotation: ^3.0.0
+  auto_route: ^10.2.0
+  dartz: ^0.10.1
+  dio: ^5.7.0
+  get_it: ^8.0.0
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  freezed: ^3.0.0
+  json_serializable: ^6.13.0

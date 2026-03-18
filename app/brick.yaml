@@ -1,0 +1,14 @@
+name: app
+description: Base Flutter app with main.dart, app.dart, shared skeleton, mason.yaml, Makefile, .fvmrc, assets.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0"
+
+vars:
+  packageName:
+    type: string
+    description: Dart package name for imports
+    prompt: Package name
+    default: base_app

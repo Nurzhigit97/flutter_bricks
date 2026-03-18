@@ -1,0 +1,21 @@
+name: feature
+description: Feature with list and detail screens (data layer + presentation with cubits).
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0"
+
+vars:
+  featureName:
+    type: string
+    description: Feature name in snake_case (e.g. my_review)
+    prompt: Feature name (snake_case)
+  listName:
+    type: string
+    description: Plural name for list folder/widget (e.g. my_reviews)
+    prompt: List folder/widget name (snake_case plural)
+  package:
+    type: string
+    description: Dart package name for imports
+    default: base_app
