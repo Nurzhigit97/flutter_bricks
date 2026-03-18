@@ -25,6 +25,7 @@ const _requiredDevDependencies = <String, String>{
 Future<void> run(HookContext context) async {
   await _ensureDependencies(context);
   await _renameFeatureDir(context);
+  await _registerFeatureInjection(context);
 }
 
 Future<void> _ensureDependencies(HookContext context) async {
@@ -119,4 +120,74 @@ Future<void> _renameFeatureDir(HookContext context) async {
     }
     dir.renameSync('lib/features/$featureName');
   }
+}
+
+const _featureInjectionsPath = 'lib/shared/utils/config/feature_injections.dart';
+
+/// Добавляет импорт и регистрацию новой фичи в feature_injections.dart.
+Future<void> _registerFeatureInjection(HookContext context) async {
+  final file = File(_featureInjectionsPath);
+  if (!file.existsSync()) {
+    context.logger.info(
+      '$_featureInjectionsPath not found — add ${context.vars['featureName']}Injection to featureInjections manually',
+    );
+    return;
+  }
+
+  final package = context.vars['package'] as String? ?? 'base_app';
+  final featureName = context.vars['featureName'] as String? ?? 'feature';
+  final snakeName = _toSnakeCase(featureName);
+  final camelName = _toCamelCase(snakeName);
+  final injectionName = '${camelName}Injection';
+  final importLine =
+      "import 'package:$package/features/$snakeName/${snakeName}_injection.dart';";
+
+  String content = file.readAsStringSync();
+
+  if (content.contains(importLine) && content.contains('$injectionName,')) {
+    return;
+  }
+
+  if (!content.contains(importLine)) {
+    final imports = RegExp(r"import '[^']+';", multiLine: true).allMatches(content);
+    if (imports.isNotEmpty) {
+      final lastImport = imports.last;
+      content = content.replaceRange(
+        lastImport.end,
+        lastImport.end,
+        '\n$importLine',
+      );
+    }
+  }
+
+  final listEntry = '$injectionName,';
+  if (!content.contains(listEntry)) {
+    content = content.replaceFirst(
+      RegExp(r'(\s+)(appFeaturesInjection,)'),
+      '\$1appFeaturesInjection,\n\$1$listEntry',
+    );
+  }
+
+  file.writeAsStringSync(content);
+  context.logger.info('Registered $injectionName in $_featureInjectionsPath');
+}
+
+String _toSnakeCase(String s) {
+  return s
+      .replaceAllMapped(
+        RegExp(r'[A-Z]'),
+        (m) => '_${m.group(0)!.toLowerCase()}',
+      )
+      .replaceFirst(RegExp(r'^_'), '')
+      .toLowerCase();
+}
+
+String _toCamelCase(String snake) {
+  if (snake.isEmpty) return snake;
+  final parts = snake.split('_');
+  return parts.first.toLowerCase() +
+      parts.skip(1).map((p) {
+        if (p.isEmpty) return p;
+        return p[0].toUpperCase() + p.substring(1).toLowerCase();
+      }).join();
 }
