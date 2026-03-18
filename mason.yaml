@@ -1,6 +1,8 @@
 bricks:
   app:
-    path: app
+    git:
+      url: "git@github.com:Nurzhigit97/flutter_bricks.git"
+      path: app
   feature:
     git:
       url: "git@github.com:Nurzhigit97/flutter_bricks.git"
