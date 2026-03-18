@@ -5,12 +5,15 @@
 - `lib/main.dart` — точка входа
 - `lib/app.dart` — корневой виджет приложения
 - `lib/shared/` — скелет shared (injections, theme, config, api_client, log)
+- `lib/features/` — папка для фич: `main_page.dart`, barrel `features.dart` (создаётся при генерации)
 - `mason.yaml` — конфиг Mason (bricks/feature)
 - `Makefile` — команды get, clean, watch, makeFeature, release
 - `.fvmrc` — версия Flutter (stable)
 - `assets/` — папка для ассетов
 
 ## Использование
+
+**Важно:** запускай `mason make app` из **корня целевого Flutter-проекта** (там, где лежит `pubspec.yaml`). Тогда создадутся `lib/`, `lib/features/`, `lib/shared/` и остальные файлы.
 
 В корне нового или существующего проекта:
 
