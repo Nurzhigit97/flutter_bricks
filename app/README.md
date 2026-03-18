@@ -31,4 +31,13 @@ mason add app --path bricks/app
 mason make app
 ```
 
+**Если `lib/features/` не создаётся:** brick берётся из кэша Mason. При установке из Git (`--git-url`) мог загрузиться старый вариант. Обнови кэш в целевом проекте:
+
+```bash
+mason remove app
+mason add app --git-url git@github.com:Nurzhigit97/flutter_bricks.git --git-path app
+mason get
+mason make app -c .mason_app_config.json --on-conflict overwrite
+```
+
 После генерации подставить реальный контент в `lib/shared/` из текущего base_example_app при необходимости (routes, l10n, app_features и т.д.).

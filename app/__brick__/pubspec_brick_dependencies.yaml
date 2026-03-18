@@ -29,6 +29,7 @@ dependencies:
   logging: ^1.2.0
   collection: ^1.18.0
   permission_handler: ^12.0.1
+  flutter_native_splash: ^2.4.7
 
   # Storage
   shared_preferences: ^2.2.2
