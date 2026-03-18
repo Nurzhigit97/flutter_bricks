@@ -284,22 +284,6 @@ class CustomTabbarRouteArgs {
 }
 
 /// generated route for
-/// [_i7.MainPage]
-class MainRoute extends _i10.PageRouteInfo<void> {
-  const MainRoute({List<_i10.PageRouteInfo>? children})
-    : super(MainRoute.name, initialChildren: children);
-
-  static const String name = 'MainRoute';
-
-  static _i10.PageInfo page = _i10.PageInfo(
-    name,
-    builder: (data) {
-      return const _i7.MainPage();
-    },
-  );
-}
-
-/// generated route for
 /// [_i8.SplashPage]
 class SplashRoute extends _i10.PageRouteInfo<void> {
   const SplashRoute({List<_i10.PageRouteInfo>? children})

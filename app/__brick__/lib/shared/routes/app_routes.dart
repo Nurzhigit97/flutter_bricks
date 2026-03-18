@@ -11,34 +11,34 @@ class AppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(
-      page: MainRoute.page,
-      initial: true,
-      guards: [isFirstLaunchGuard],
-      children: [
-        // Home Tab
-        // AutoRoute(
-        //   page: HomeNavigator.page,
-        //   children: [AutoRoute(page: HomeRoute.page, initial: true)],
-        // ),
-        // // Tasks Tab
-        // AutoRoute(
-        //   page: TaskNavigator.page,
-        //   children: [AutoRoute(page: TaskRoute.page, initial: true)],
-        // ),
+    // AutoRoute(
+    //   page: MainRoute.page,
+    //   initial: true,
+    //   guards: [isFirstLaunchGuard],
+    //   children: [
+    // Home Tab
+    // AutoRoute(
+    //   page: HomeNavigator.page,
+    //   children: [AutoRoute(page: HomeRoute.page, initial: true)],
+    // ),
+    // // Tasks Tab
+    // AutoRoute(
+    //   page: TaskNavigator.page,
+    //   children: [AutoRoute(page: TaskRoute.page, initial: true)],
+    // ),
 
-        // // Chat Tab
-        // AutoRoute(
-        //   page: ChatNavigator.page,
-        //   children: [AutoRoute(page: ChatRoute.page, initial: true)],
-        // ),
+    // // Chat Tab
+    // AutoRoute(
+    //   page: ChatNavigator.page,
+    //   children: [AutoRoute(page: ChatRoute.page, initial: true)],
+    // ),
 
-        // // Profile Tab
-        // AutoRoute(
-        //   page: ProfileNavigator.page,
-        //   children: [AutoRoute(page: ProfileRoute.page, initial: true)],
-        // ),
-      ],
-    ),
+    // // Profile Tab
+    // AutoRoute(
+    //   page: ProfileNavigator.page,
+    //   children: [AutoRoute(page: ProfileRoute.page, initial: true)],
+    // ),
+    //     ],
+    //   ),
   ];
 }
