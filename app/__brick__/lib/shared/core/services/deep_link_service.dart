@@ -65,7 +65,7 @@ class DeepLinkService {
 
     if (status == null) return;
 
-    // // Переходим на экран результата
+    // Переходим на экран результата
     // WidgetsBinding.instance.addPostFrameCallback((_) {
     //   if (_router != null) {
     //     _router!.pushAndPopUntil(

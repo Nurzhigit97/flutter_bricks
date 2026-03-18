@@ -38,7 +38,7 @@ class AppRouter extends RootStackRouter {
     //   page: ProfileNavigator.page,
     //   children: [AutoRoute(page: ProfileRoute.page, initial: true)],
     // ),
-    //     ],
-    //   ),
+    // ],
+    // ),
   ];
 }
