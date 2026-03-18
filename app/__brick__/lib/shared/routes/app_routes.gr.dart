@@ -10,7 +10,6 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i10;
-import 'package:{{packageName}}/features/main_page.dart' as _i7;
 import 'package:{{packageName}}/shared/app_features/presentation/pages/app_pdf_view_page.dart'
     as _i1;
 import 'package:{{packageName}}/shared/app_features/presentation/pages/splash_page.dart'
@@ -282,38 +281,6 @@ class CustomTabbarRouteArgs {
       const _i12.ListEquality<String>().hash(tabs) ^
       const _i12.ListEquality<_i11.Widget>().hash(tabViews) ^
       isChildView.hashCode;
-}
-
-/// generated route for
-/// [_i5.HomeNavigator]
-class HomeNavigator extends _i10.PageRouteInfo<void> {
-  const HomeNavigator({List<_i10.PageRouteInfo>? children})
-    : super(HomeNavigator.name, initialChildren: children);
-
-  static const String name = 'HomeNavigator';
-
-  static _i10.PageInfo page = _i10.PageInfo(
-    name,
-    builder: (data) {
-      return _i10.WrappedRoute(child: const _i5.HomeNavigator());
-    },
-  );
-}
-
-/// generated route for
-/// [_i6.HomePage]
-class HomeRoute extends _i10.PageRouteInfo<void> {
-  const HomeRoute({List<_i10.PageRouteInfo>? children})
-    : super(HomeRoute.name, initialChildren: children);
-
-  static const String name = 'HomeRoute';
-
-  static _i10.PageInfo page = _i10.PageInfo(
-    name,
-    builder: (data) {
-      return const _i6.HomePage();
-    },
-  );
 }
 
 /// generated route for

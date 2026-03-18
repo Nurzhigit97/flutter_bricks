@@ -3,11 +3,9 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 import 'package:{{packageName}}/shared/utils/constants/app_const/app_const.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:{{packageName}}/firebase_options.dart';
 import 'package:{{packageName}}/shared/core/services/storage/local_storage.dart';
 
 /// Сервис для работы с Firebase Cloud Messaging (FCM)
@@ -89,7 +87,7 @@ class FCMService {
         );
 
     await _localNotifications.initialize(
-      initializationSettings,
+      settings: initializationSettings,
       onDidReceiveNotificationResponse: _onNotificationTapped,
     );
 
@@ -251,10 +249,10 @@ class FCMService {
     final payloadJson = jsonEncode(message.data);
 
     await _localNotifications.show(
-      message.hashCode,
-      message.notification?.title ?? 'Новое уведомление',
-      message.notification?.body ?? '',
-      platformChannelSpecifics,
+      id: message.hashCode,
+      title: message.notification?.title ?? 'Новое уведомление',
+      body: message.notification?.body ?? '',
+      notificationDetails: platformChannelSpecifics,
       payload: payloadJson,
     );
   }
@@ -345,7 +343,8 @@ class FCMService {
 /// можно раскомментировать код ниже.
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // TODO: Implement firebase messaging background handler
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   log('Handling a background message: ${message.messageId}');
   log('Message data: ${message.data}');

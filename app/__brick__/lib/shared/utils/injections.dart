@@ -4,7 +4,6 @@ import 'package:{{packageName}}/shared/utils/constants/app_const/app_const.dart'
 import 'package:dio/dio.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -17,7 +16,6 @@ import 'package:{{packageName}}/shared/core/services/fcm_service.dart';
 import 'package:{{packageName}}/shared/core/services/firebase_crashlytics_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:{{packageName}}/firebase_options.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/cubits/app_tab/app_tab_cubit.dart';
 import 'package:{{packageName}}/shared/utils/config/feature_injections.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/cubits/language_cubit/language_cubit.dart';
@@ -69,7 +67,8 @@ Future<void> initSharedPrefsInjections() async {
 }
 
 Future<void> initFirebaseInjections() async {
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // TODO: Implement firebase initialization
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // Настройка Firebase Analytics
   final analytics = FirebaseAnalytics.instance;

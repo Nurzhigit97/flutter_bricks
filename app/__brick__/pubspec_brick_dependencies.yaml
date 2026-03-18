@@ -28,6 +28,7 @@ dependencies:
   html: ^0.15.4
   logging: ^1.2.0
   collection: ^1.18.0
+  permission_handler: ^11.1.0
 
   # Storage & paths
   shared_preferences: ^2.2.2
