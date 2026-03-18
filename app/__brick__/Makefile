@@ -20,6 +20,14 @@ splash:
 generateIcons:
 	fvm dart run flutter_launcher_icons
 
+masonRemove:
+	mason remove $(name)
+
+masonAdd:
+	mason add $(name) --git-url git@github.com:Nurzhigit97/flutter_bricks.git --git-path $(gitPath)
+	mason get
+
+
 # Usage: make makeFeature featureName=chat listName=chats package=base_app
 # Or: make makeFeature  (Mason will prompt for featureName, listName, package)
 makeFeature:
