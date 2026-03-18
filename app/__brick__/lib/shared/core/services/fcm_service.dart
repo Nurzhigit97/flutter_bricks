@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
-import 'package:{{packageName}}/shared/utils/constants/app_const/app_const.dart';
+import 'package:example_app/shared/utils/constants/app_const/app_const.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:{{packageName}}/shared/core/services/storage/local_storage.dart';
+import 'package:example_app/shared/core/services/storage/local_storage.dart';
 
 /// Сервис для работы с Firebase Cloud Messaging (FCM)
 class FCMService {
