@@ -10,9 +10,6 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i10;
-import 'package:{{packageName}}/features/home/home_navigator.dart' as _i5;
-import 'package:{{packageName}}/features/home/presentation/pages/home_page.dart'
-    as _i6;
 import 'package:{{packageName}}/features/main_page.dart' as _i7;
 import 'package:{{packageName}}/shared/app_features/presentation/pages/app_pdf_view_page.dart'
     as _i1;

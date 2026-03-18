@@ -13,9 +13,7 @@ class App extends StatelessWidget {
       darkTheme: darkTheme,
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Center(child: Text('Base App')),
-      ),
+      home: const Scaffold(body: Center(child: Text('Base App'))),
     );
   }
 }
