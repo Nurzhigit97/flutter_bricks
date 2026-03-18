@@ -9,7 +9,7 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:dio/dio.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
-import 'package:{{packageName}}/shared/core/helper/extenstions.dart';
+import 'package:{{packageName}}/shared/core/helper/extensions.dart';
 
 @RoutePage()
 class AppPdfViewPage extends StatefulWidget {

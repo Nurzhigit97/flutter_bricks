@@ -29,9 +29,10 @@ dependencies:
   logging: ^1.2.0
   collection: ^1.18.0
 
-  # Storage
+  # Storage & paths
   shared_preferences: ^2.2.2
   flutter_secure_storage: ^9.0.0
+  path_provider: ^2.1.0
 
   # Firebase (опционально — если используешь)
   firebase_core: ^2.24.0

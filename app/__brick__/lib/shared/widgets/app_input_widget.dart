@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:{{packageName}}/shared/core/helper/extenstions.dart';
+import 'package:{{packageName}}/shared/core/helper/extensions.dart';
 import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
 
 class AppInputWidget extends StatefulWidget {

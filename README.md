@@ -61,7 +61,7 @@ mason get
 mason make app
 ```
 
-Mason спросит `Package name` (по умолчанию `base_app`). Можно передать конфиг:
+Mason спросит **Package name** (по умолчанию `base_app`) — это значение подставится во все импорты вместо `{{packageName}}`. Если не указать его (или не передать в конфиге), в сгенерированных файлах так и останется строка `{{packageName}}` в путях пакета. Рекомендуется передавать конфиг с именем из `pubspec.yaml`:
 
 ```bash
 echo '{"packageName":"my_app"}' > .mason_app_config.json
