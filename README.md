@@ -111,6 +111,8 @@ make get
 make makeFeature featureName=chat listName=chats package=my_app
 ```
 
+Цель называется **makeFeature** (одним словом), не `make feature`. Сначала добавь brick **feature** (шаг 2), иначе `mason make feature` и `make makeFeature` недоступны.
+
 ---
 
 ## Зависимости в проекте
