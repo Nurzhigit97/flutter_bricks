@@ -65,15 +65,15 @@ class DeepLinkService {
 
     if (status == null) return;
 
-    // Переходим на экран результата
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_router != null) {
-        _router!.pushAndPopUntil(
-          const MainRoute(),
-          predicate: (route) => false,
-        );
-      }
-    });
+    // // Переходим на экран результата
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   if (_router != null) {
+    //     _router!.pushAndPopUntil(
+    //       const MainRoute(),
+    //       predicate: (route) => false,
+    //     );
+    //   }
+    // });
   }
 
   void dispose() {
