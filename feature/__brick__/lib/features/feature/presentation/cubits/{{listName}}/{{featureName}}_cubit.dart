@@ -3,7 +3,7 @@ import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/cu
 import 'package:{{package}}/shared/utils/extensions/on_future_either.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class {{featureName.pascalCase()}}Cubit extends void Cubit<{{featureName.pascalCase()}}State> {
+class {{featureName.pascalCase()}}Cubit extends Cubit<{{featureName.pascalCase()}}State> {
   final {{featureName.pascalCase()}}Repository _repository;
   {{featureName.pascalCase()}}Cubit(this._repository)
     : super(const {{featureName.pascalCase()}}State.loading());

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
-class {{featureName.pascalCase()}}Navigator extends StatelessWidget implements void AutoRouteWrapper {
+class {{featureName.pascalCase()}}Navigator extends StatelessWidget implements AutoRouteWrapper {
   const {{featureName.pascalCase()}}Navigator({super.key});
 
   @override

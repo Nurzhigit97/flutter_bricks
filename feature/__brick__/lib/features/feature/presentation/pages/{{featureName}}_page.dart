@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
-class {{featureName.pascalCase()}}Page extends void StatelessWidget {
+class {{featureName.pascalCase()}}Page extends StatelessWidget {
   const {{featureName.pascalCase()}}Page({super.key});
 
   @override

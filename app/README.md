@@ -31,12 +31,14 @@ mason add app --path bricks/app
 mason make app
 ```
 
-**Если `lib/features/` не создаётся:** brick берётся из кэша Mason. При установке из Git (`--git-url`) мог загрузиться старый вариант. Обнови кэш в целевом проекте:
+**Если `lib/features/` не создаётся:** brick берётся из кэша Mason. Обнови кэш и перегенерируй:
 
 ```bash
 mason remove app
 mason add app --git-url git@github.com:Nurzhigit97/flutter_bricks.git --git-path app
 mason get
+# Создай конфиг с именем пакета (как в pubspec.yaml), затем генерация:
+echo '{"packageName":"example_app"}' > .mason_app_config.json
 mason make app -c .mason_app_config.json --on-conflict overwrite
 ```
 
