@@ -126,8 +126,7 @@ Brick **app** не подставляет зависимости в `pubspec.yam
 - **Роутинг:** `auto_route` (+ dev: `build_runner`, `auto_route_generator`)
 - **UI:** `google_fonts`, `flutter_svg`, `lottie`, `shimmer`, `animations`, `flutter_easyloading`, `fluttertoast`, `url_launcher`
 - **Хранение:** `shared_preferences`, `flutter_secure_storage`
-- **Firebase (по желанию):** `firebase_core`, `firebase_analytics`, `firebase_auth`, `firebase_messaging`, `firebase_crashlytics`, `flutter_local_notifications`
-- **Прочее:** `intl`, `html`, `logging`, `app_links`, `package_info_plus`, `connectivity_plus`, `cached_network_image`, `flutter_cache_manager`, `photo_view`, `youtube_player_flutter`, `webview_flutter`, `flutter_markdown`, `no_screenshot` и др. (полный список — в сгенерированном файле).
+- **Прочее:** `intl`, `html`, `logging`, `app_links`, `package_info_plus`, `connectivity_plus`, `cached_network_image`, `flutter_cache_manager`, `photo_view`, `youtube_player_flutter`, `webview_flutter`, `flutter_markdown`, `no_screenshot`, `flutter_screenutil`, `flutter_localizations` и др. (полный список — в сгенерированном файле).
 
 Brick **feature** рассчитан на проект с уже настроенными:
 
