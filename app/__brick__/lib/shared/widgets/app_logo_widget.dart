@@ -1,4 +1,4 @@
-import 'package:{{packageName}}/shared/utils/constants/assets/assets.gen.dart';
+import 'package:{{packageName}}/core/utils/constants/assets/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class AppLogoWidget extends StatelessWidget {

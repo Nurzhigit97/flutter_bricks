@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/widgets/radio_button/enum_radio_group.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/widgets/radio_button/enum_radio_option.dart';
-import 'package:{{packageName}}/shared/core/helper/extensions.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 class EnumRadioFormField<T> extends FormField<T> {
   EnumRadioFormField({

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:{{packageName}}/shared/widgets/select_image/app_error_network_image_widget.dart';
-import 'package:{{packageName}}/shared/routes/app_routes.gr.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/routes/app_routes.gr.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';

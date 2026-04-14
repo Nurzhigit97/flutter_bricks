@@ -1,11 +1,11 @@
-import 'package:{{packageName}}/shared/utils/extensions/context_extensions.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/shared/widgets/no_screenshot_scope_widget.dart';
 import 'package:{{packageName}}/shared/widgets/video_player/custom_full_screen_button.dart';
 import 'package:{{packageName}}/shared/widgets/video_player/video_settings_button.dart';
 import 'package:{{packageName}}/shared/widgets/video_player/you_tube_full_screen_widget.dart';
 import 'package:{{packageName}}/shared/widgets/video_player/youtube_mute_button.dart';
-import 'package:{{packageName}}/shared/core/translation/generated/l10n.dart';
+import 'package:{{packageName}}/core/translation/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 

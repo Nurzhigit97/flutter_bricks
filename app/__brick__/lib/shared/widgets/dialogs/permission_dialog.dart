@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/core/translation/generated/l10n.dart';
+import 'package:{{packageName}}/core/translation/generated/l10n.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 Future<void> showPermissionDialog(

@@ -1,5 +1,5 @@
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppButtonWithIconWidget extends StatelessWidget {

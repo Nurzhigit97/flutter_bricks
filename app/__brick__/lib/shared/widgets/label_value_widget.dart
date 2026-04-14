@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
-import 'package:{{packageName}}/shared/utils/extensions/context_extensions.dart';
+import 'package:{{packageName}}/core/translation/generated/l10n.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 
 class LabelValueWidget extends StatelessWidget {
   const LabelValueWidget({

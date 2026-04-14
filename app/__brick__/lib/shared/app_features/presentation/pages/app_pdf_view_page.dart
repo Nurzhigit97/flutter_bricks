@@ -2,14 +2,14 @@ import 'dart:developer';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/translation/generated/l10n.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:dio/dio.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
-import 'package:{{packageName}}/shared/core/helper/extensions.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 @RoutePage()
 class AppPdfViewPage extends StatefulWidget {

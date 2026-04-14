@@ -1,9 +1,9 @@
-import 'package:{{packageName}}/shared/utils/constants/app_const/app_const.dart';
+import 'package:{{packageName}}/core/utils/constants/app_const/app_const.dart';
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/core/services/storage/local_storage.dart';
+import 'package:{{packageName}}/core/services/storage/local_storage.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:{{packageName}}/shared/widgets/app_loader_widget.dart';
-import 'package:{{packageName}}/shared/utils/injections.dart';
+import 'package:{{packageName}}/core/utils/injections.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {

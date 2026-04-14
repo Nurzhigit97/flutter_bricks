@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class RefreshIndicatorWidget extends StatelessWidget {
   final VoidCallback onRefresh;

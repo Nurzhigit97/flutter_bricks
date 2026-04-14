@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:{{packageName}}/shared/core/helper/helper.dart';
-import 'package:{{packageName}}/shared/utils/injections.dart';
-import 'package:{{packageName}}/shared/utils/log/app_observer.dart';
+import 'package:{{packageName}}/core/helper/helper.dart';
+import 'package:{{packageName}}/core/utils/injections.dart';
+import 'package:{{packageName}}/core/utils/log/app_observer.dart';
 
 Future<void> _initializeApp() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

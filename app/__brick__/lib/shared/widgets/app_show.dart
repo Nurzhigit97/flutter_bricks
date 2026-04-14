@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/core/helper/extensions.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 @immutable
 final class AppShow {

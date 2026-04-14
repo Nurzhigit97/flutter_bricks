@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_markdown_latex/flutter_markdown_latex.dart';
 import 'package:markdown/markdown.dart' as md;
-import 'package:{{packageName}}/shared/core/helper/extensions.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 class MathContentWidget extends StatelessWidget {
   final String formula;

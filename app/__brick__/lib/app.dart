@@ -5,15 +5,15 @@ import 'package:{{packageName}}/shared/app_features/presentation/cubits/app_feat
 import 'package:{{packageName}}/shared/app_features/presentation/cubits/app_tab/app_tab_cubit.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/cubits/connectivity/connectivity_cubit.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/cubits/language_cubit/language_cubit.dart';
-import 'package:{{packageName}}/shared/core/services/deep_link_service.dart';
-import 'package:{{packageName}}/shared/routes/app_routes.dart';
-import 'package:{{packageName}}/shared/theme/dark_theme.dart';
-import 'package:{{packageName}}/shared/theme/light_theme.dart';
-import 'package:{{packageName}}/shared/utils/injections.dart';
-import 'package:{{packageName}}/shared/utils/log/app_route_observer.dart';
+import 'package:{{packageName}}/core/services/deep_link_service.dart';
+import 'package:{{packageName}}/core/routes/app_routes.dart';
+import 'package:{{packageName}}/core/theme/dark_theme.dart';
+import 'package:{{packageName}}/core/theme/light_theme.dart';
+import 'package:{{packageName}}/core/utils/injections.dart';
+import 'package:{{packageName}}/core/utils/log/app_route_observer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:{{packageName}}/shared/core/translation/generated/l10n.dart';
+import 'package:{{packageName}}/core/translation/generated/l10n.dart';
 
 class App extends StatefulWidget {
   const App({super.key});

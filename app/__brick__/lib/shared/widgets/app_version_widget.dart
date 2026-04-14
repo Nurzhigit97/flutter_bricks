@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/core/helper/extensions.dart';
-import 'package:{{packageName}}/shared/core/helper/helper.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
+import 'package:{{packageName}}/core/helper/helper.dart';
 import 'package:{{packageName}}/shared/widgets/app_future_builder_widget.dart';
-import 'package:{{packageName}}/shared/core/translation/generated/l10n.dart';
+import 'package:{{packageName}}/core/translation/generated/l10n.dart';
 
 class AppVersionWidget extends StatelessWidget {
   const AppVersionWidget({super.key});

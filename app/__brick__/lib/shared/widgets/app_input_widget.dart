@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:{{packageName}}/shared/core/helper/extensions.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class AppInputWidget extends StatefulWidget {
   final String? hintText;

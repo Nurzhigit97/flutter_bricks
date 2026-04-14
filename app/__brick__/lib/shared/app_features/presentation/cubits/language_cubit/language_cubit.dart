@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:{{packageName}}/shared/core/services/storage/local_storage.dart';
-import 'package:{{packageName}}/shared/utils/constants/app_const/app_const.dart';
+import 'package:{{packageName}}/core/services/storage/local_storage.dart';
+import 'package:{{packageName}}/core/utils/constants/app_const/app_const.dart';
 
 class LanguageCubit extends Cubit<Locale> {
   final LocalStorage prefsService;

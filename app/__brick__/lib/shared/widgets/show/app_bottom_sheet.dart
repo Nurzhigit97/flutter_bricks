@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/shared/widgets/app_search_widget.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 /// Unified class for showing bottom sheets across the app
 @immutable

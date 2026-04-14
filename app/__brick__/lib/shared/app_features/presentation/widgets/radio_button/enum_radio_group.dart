@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/widgets/radio_button/enum_radio_option.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class EnumRadioGroup<T> extends StatelessWidget {
   final String label;

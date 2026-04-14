@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:{{packageName}}/shared/app_features/data/models/app_version_model.dart';
-import 'package:{{packageName}}/shared/core/api_client/app_failure.dart';
-import 'package:{{packageName}}/shared/core/api_client/easy_api_client.dart';
+import 'package:{{packageName}}/core/api_client/app_failure.dart';
+import 'package:{{packageName}}/core/api_client/easy_api_client.dart';
 import 'package:dartz/dartz.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 

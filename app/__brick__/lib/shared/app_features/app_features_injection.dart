@@ -3,8 +3,8 @@ import 'package:{{packageName}}/shared/app_features/data/repositories/app_featur
 import 'package:{{packageName}}/shared/app_features/data/repositories/app_features_repository.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/cubits/app_features/app_features_cubit.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/cubits/connectivity/connectivity_cubit.dart';
-import 'package:{{packageName}}/shared/utils/injections.dart';
-import 'package:{{packageName}}/shared/core/api_client/easy_api_client.dart';
+import 'package:{{packageName}}/core/utils/injections.dart';
+import 'package:{{packageName}}/core/api_client/easy_api_client.dart';
 
 Future<void> appFeaturesInjection() async {
   sl.registerLazySingleton<AppFeaturesRepository>(

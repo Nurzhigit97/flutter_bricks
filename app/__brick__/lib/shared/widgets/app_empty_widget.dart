@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:{{packageName}}/shared/core/translation/generated/l10n.dart';
+import 'package:{{packageName}}/core/translation/generated/l10n.dart';
 
 class AppEmptyWidget extends StatelessWidget {
   const AppEmptyWidget({super.key});

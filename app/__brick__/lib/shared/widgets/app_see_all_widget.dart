@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/shared/core/helper/extensions.dart';
-import 'package:{{packageName}}/shared/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
+import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class AppSeeAllWidget extends StatelessWidget {
   final String title;
