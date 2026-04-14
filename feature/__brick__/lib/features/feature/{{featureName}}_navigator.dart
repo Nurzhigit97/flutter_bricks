@@ -11,10 +11,7 @@ class {{featureName.pascalCase()}}Navigator extends StatelessWidget implements A
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (_) {
-        final cubit = sl<{{featureName.pascalCase()}}Cubit>();
-        return cubit..load{{featureName.pascalCase()}}();
-      },
+      create: (_) => sl<{{featureName.pascalCase()}}Cubit>(),
       child: this,
     );
   }

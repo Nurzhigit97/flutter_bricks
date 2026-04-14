@@ -164,10 +164,15 @@ Future<void> _registerFeatureInjection(HookContext context) async {
 
   final listEntry = '$injectionName,';
   if (!content.contains(listEntry)) {
-    content = content.replaceFirst(
-      RegExp(r'(\s+)(appFeaturesInjection,)'),
-      '\$1appFeaturesInjection,\n\$1$listEntry',
-    );
+    final appFeaturesEntryMatch = RegExp(
+      r'^(\s*)appFeaturesInjection,\s*$',
+      multiLine: true,
+    ).firstMatch(content);
+    if (appFeaturesEntryMatch != null) {
+      final indent = appFeaturesEntryMatch.group(1) ?? '  ';
+      final insertPos = appFeaturesEntryMatch.end;
+      content = content.replaceRange(insertPos, insertPos, '\n$indent$listEntry');
+    }
   }
 
   file.writeAsStringSync(content);

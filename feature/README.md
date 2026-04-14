@@ -1,6 +1,6 @@
 # feature brick
 
-Генерирует фичу: data layer (models, repository, remote datasource), presentation (cubits с Freezed, pages + elements), **injection** и **navigator** для подключения в приложение.
+Генерирует фичу: data layer (models, repository, remote datasource), presentation (cubits с Freezed, pages + elements + controllers), **injection** и **navigator** для подключения в приложение.
 
 ## Подключение brick: локально и через Git
 
