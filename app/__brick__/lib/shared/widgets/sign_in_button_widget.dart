@@ -27,7 +27,7 @@ class SignInButtonWidget extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    S.of(context).signIn,
+                    S.of(context).signIn2,
                     style: context.theme.textTheme.labelLarge?.copyWith(
                       color: AppColors.white,
                     ),

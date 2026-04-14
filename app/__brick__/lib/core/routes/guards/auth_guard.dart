@@ -32,7 +32,7 @@ class AuthGuard extends AutoRouteGuard {
             showDialog(
               context: context,
               builder: (context) => AuthedGuardDialog(
-                buttonText: S.of(context).signIn,
+                buttonText: S.of(context).signIn2,
                 onTap: () {
                   // TODO: Implement navigate to the screen
                 },
