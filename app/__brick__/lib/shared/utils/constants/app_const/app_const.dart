@@ -13,6 +13,6 @@ class AppConst {
   static const privacyPolicyUrl = '';
   static const userAgreementUrl = '';
   static const isSubscribed = 'IS_SUBSCRIBED';
-  static const baseUrl = 'https://okupro.remotion.kg/v1/';
-  static const domainUrl = 'https://okupro.remotion.kg/';
+  static const baseUrl = '';
+  static const domainUrl = '';
 }

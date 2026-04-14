@@ -1,0 +1,25 @@
+# Secrets and local environment
+.env
+.env.*
+*.env
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+*.mobileprovision
+
+# Firebase / service accounts / cloud credentials
+google-services.json
+GoogleService-Info.plist
+firebase_options.dart
+service-account*.json
+credentials*.json
+
+# Local editor / OS / temp
+.DS_Store
+.idea/
+.vscode/
+.tmp_*

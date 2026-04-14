@@ -10,8 +10,23 @@ class AppEnv {
     defaultValue: false,
   );
 
-  static String get baseUrl => AppConst.baseUrl;
-  static String get domainUrl => AppConst.domainUrl;
+  /// Never hardcode sensitive values in source code.
+  /// Pass runtime config via:
+  /// flutter run --dart-define=BASE_URL=... --dart-define=DOMAIN_URL=...
+  static const String _baseUrlFromDefine = String.fromEnvironment(
+    'BASE_URL',
+    defaultValue: '',
+  );
+  static const String _domainUrlFromDefine = String.fromEnvironment(
+    'DOMAIN_URL',
+    defaultValue: '',
+  );
+
+  static String get baseUrl =>
+      _baseUrlFromDefine.isNotEmpty ? _baseUrlFromDefine : AppConst.baseUrl;
+  static String get domainUrl => _domainUrlFromDefine.isNotEmpty
+      ? _domainUrlFromDefine
+      : AppConst.domainUrl;
 
   // Пример для нескольких окружений (раскомментировать при использовании):
   // static const String _env = String.fromEnvironment('APP_ENV', defaultValue: 'prod');
