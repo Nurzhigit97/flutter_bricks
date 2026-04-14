@@ -6,7 +6,7 @@ import 'package:{{packageName}}/shared/app_features/presentation/cubits/connecti
 import 'package:{{packageName}}/shared/utils/injections.dart';
 import 'package:{{packageName}}/shared/core/api_client/easy_api_client.dart';
 
-void appFeaturesInjection() {
+Future<void> appFeaturesInjection() async {
   sl.registerLazySingleton<AppFeaturesRepository>(
     () => AppFeaturesImplRepository(
       AppFeaturesRemoteDatasource(sl<EasyApiClient>()),

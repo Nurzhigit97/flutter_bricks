@@ -88,6 +88,6 @@ mason make feature
 2. Зарегистрируй injection: вызови `{{featureName}}Injection()` при старте приложения (например в `main.dart` или в общем месте инициализации DI рядом с другими фичами).
 
 3. Добавь `{{featureName.pascalCase()}}Navigator` в роуты: в `app_routes.dart` в children `MainRoute` добавь
-   `AutoRoute(page: {{featureName.pascalCase()}}Navigator.page, children: [AutoRoute(page: {{featureName.pascalCase()}}ScreenRoute.page, initial: true), ...])`.
+   `AutoRoute(page: {{featureName.pascalCase()}}Navigator.page, children: [AutoRoute(page: {{featureName.pascalCase()}}PageRoute.page, initial: true), ...])`.
 
 4. В `remote_data_source` поправь URL эндпоинтов под свой API.

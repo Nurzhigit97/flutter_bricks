@@ -39,7 +39,7 @@ Future<void> initInjections() async {
 
   // Feature injections (order matters if features depend on each other)
   for (final inject in featureInjections) {
-    inject();
+    await inject();
   }
 }
 

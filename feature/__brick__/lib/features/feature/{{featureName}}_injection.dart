@@ -5,7 +5,7 @@ import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/cu
 import 'package:{{package}}/shared/core/api_client/easy_api_client.dart';
 import 'package:{{package}}/shared/utils/injections.dart';
 
-void {{featureName.camelCase()}}Injection() {
+Future<void> {{featureName.camelCase()}}Injection() async {
   sl.registerLazySingleton<{{featureName.pascalCase()}}Repository>(
     () => {{featureName.pascalCase()}}ImplRepository(
       {{featureName.pascalCase()}}RemoteDataSource(sl<EasyApiClient>()),

@@ -9,17 +9,19 @@ const _requiredDependencies = <String, String>{
   'flutter': 'sdk: flutter',
   'flutter_bloc': '^9.1.1',
   'bloc': '^9.1.0',
-  'freezed_annotation': '^3.0.0',
-  'auto_route': '^10.2.0',
+  'freezed_annotation': '^3.1.0',
+  'json_annotation': '^4.11.0',
+  'auto_route': '^11.1.0',
   'dartz': '^0.10.1',
-  'dio': '^5.7.0',
-  'get_it': '^8.0.0',
+  'dio': '^5.4.0',
+  'get_it': '^9.2.1',
 };
 
 const _requiredDevDependencies = <String, String>{
-  'build_runner': '^2.4.13',
-  'freezed': '^3.0.0',
-  'json_serializable': '^6.13.0',
+  'build_runner': '^2.4.0',
+  'auto_route_generator': '^10.5.0',
+  'freezed': '^3.2.5',
+  'json_serializable': '^6.13.1',
 };
 
 Future<void> run(HookContext context) async {
