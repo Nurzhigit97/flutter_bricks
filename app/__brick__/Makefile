@@ -86,8 +86,9 @@ releaseIpa:
 xcode:
 	open ios/Runner.xcworkspace
 
+# add your user name
 shorebirdExport:
-	export PATH="/Users/shaidievnurzhigit/.shorebird/bin:$PATH"
+	export PATH="/Users/userName/.shorebird/bin:$PATH"
 
 removeCache:
 	rm -R ~/Library/Developer/CoreSimulator/Caches
