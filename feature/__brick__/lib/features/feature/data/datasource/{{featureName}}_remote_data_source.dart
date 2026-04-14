@@ -1,5 +1,5 @@
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/data/models/{{featureName.snakeCase()}}/{{featureName.snakeCase()}}_model.dart';
-import 'package:{{package}}/shared/core/api_client/easy_api_client.dart';
+import 'package:{{package}}/core/api_client/easy_api_client.dart';
 import 'package:dartz/dartz.dart';
 
 class {{featureName.pascalCase()}}RemoteDataSource {

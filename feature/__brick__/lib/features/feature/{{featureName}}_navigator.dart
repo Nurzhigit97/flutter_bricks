@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/cubits/{{listName}}/{{featureName.snakeCase()}}_cubit.dart';
-import 'package:{{package}}/shared/utils/injections.dart';
+import 'package:{{package}}/core/utils/injections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

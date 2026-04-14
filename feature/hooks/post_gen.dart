@@ -124,7 +124,7 @@ Future<void> _renameFeatureDir(HookContext context) async {
   }
 }
 
-const _featureInjectionsPath = 'lib/shared/utils/config/feature_injections.dart';
+const _featureInjectionsPath = 'lib/core/utils/config/feature_injections.dart';
 
 /// Добавляет импорт и регистрацию новой фичи в feature_injections.dart.
 Future<void> _registerFeatureInjection(HookContext context) async {

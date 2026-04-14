@@ -2,8 +2,8 @@ import 'package:{{package}}/features/{{featureName.snakeCase()}}/data/datasource
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/data/repositories/{{featureName.snakeCase()}}_impl_repository.dart';
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/data/repositories/{{featureName.snakeCase()}}_repository.dart';
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/cubits/{{listName}}/{{featureName.snakeCase()}}_cubit.dart';
-import 'package:{{package}}/shared/core/api_client/easy_api_client.dart';
-import 'package:{{package}}/shared/utils/injections.dart';
+import 'package:{{package}}/core/api_client/easy_api_client.dart';
+import 'package:{{package}}/core/utils/injections.dart';
 
 Future<void> {{featureName.camelCase()}}Injection() async {
   sl.registerLazySingleton<{{featureName.pascalCase()}}Repository>(
