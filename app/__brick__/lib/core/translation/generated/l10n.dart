@@ -1519,6 +1519,166 @@ class S {
     return Intl.message('Почта', name: 'email', desc: '', args: []);
   }
 
+  /// `Нет данных по вашему запросу`
+  String get emptyDataAfterSearch {
+    return Intl.message(
+      'Нет данных по вашему запросу',
+      name: 'emptyDataAfterSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Нет интернета`
+  String get hasntInternet {
+    return Intl.message(
+      'Нет интернета',
+      name: 'hasntInternet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Не удалось загрузить PDF`
+  String get cantLoadPdf {
+    return Intl.message(
+      'Не удалось загрузить PDF',
+      name: 'cantLoadPdf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Для продолжения войдите в аккаунт`
+  String get toContinueNeedSignIn {
+    return Intl.message(
+      'Для продолжения войдите в аккаунт',
+      name: 'toContinueNeedSignIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Информация доступна только авторизованным пользователям`
+  String get cantGetInfoOnyForAuthedusers {
+    return Intl.message(
+      'Информация доступна только авторизованным пользователям',
+      name: 'cantGetInfoOnyForAuthedusers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Другая ошибка`
+  String get other_error {
+    return Intl.message('Другая ошибка', name: 'other_error', desc: '', args: []);
+  }
+
+  /// `Видео отсутствуют`
+  String get noVideos {
+    return Intl.message('Видео отсутствуют', name: 'noVideos', desc: '', args: []);
+  }
+
+  /// `ч`
+  String get h {
+    return Intl.message('ч', name: 'h', desc: '', args: []);
+  }
+
+  /// `мин`
+  String get min {
+    return Intl.message('мин', name: 'min', desc: '', args: []);
+  }
+
+  /// `сек`
+  String get sec {
+    return Intl.message('сек', name: 'sec', desc: '', args: []);
+  }
+
+  /// `Ошибка загрузки`
+  String get loadingError {
+    return Intl.message(
+      'Ошибка загрузки',
+      name: 'loadingError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Завершено`
+  String get finish {
+    return Intl.message('Завершено', name: 'finish', desc: '', args: []);
+  }
+
+  /// `Информация о кэше`
+  String get cacheInformation {
+    return Intl.message(
+      'Информация о кэше',
+      name: 'cacheInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Размер кэша`
+  String get cacheSize {
+    return Intl.message('Размер кэша', name: 'cacheSize', desc: '', args: []);
+  }
+
+  /// `Количество файлов`
+  String get numberOfFiles {
+    return Intl.message(
+      'Количество файлов',
+      name: 'numberOfFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Максимум`
+  String get maximum {
+    return Intl.message('Максимум', name: 'maximum', desc: '', args: []);
+  }
+
+  /// `Старые файлы кэша удаляются автоматически при превышении лимита`
+  String get cacheAutoClearDescription {
+    return Intl.message(
+      'Старые файлы кэша удаляются автоматически при превышении лимита',
+      name: 'cacheAutoClearDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очистить кэш`
+  String get clearCache {
+    return Intl.message('Очистить кэш', name: 'clearCache', desc: '', args: []);
+  }
+
+  /// `Удалить все сохраненные PDF-файлы`
+  String get clearCacheDescription {
+    return Intl.message(
+      'Удалить все сохраненные PDF-файлы',
+      name: 'clearCacheDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очистить`
+  String get clear {
+    return Intl.message('Очистить', name: 'clear', desc: '', args: []);
+  }
+
+  /// `Кэш очищен`
+  String get cacheCleared {
+    return Intl.message('Кэш очищен', name: 'cacheCleared', desc: '', args: []);
+  }
+
+  /// `Повторить`
+  String get repeat {
+    return Intl.message('Повторить', name: 'repeat', desc: '', args: []);
+  }
+
   /// `Версия`
   String get version {
     return Intl.message('Версия', name: 'version', desc: '', args: []);
