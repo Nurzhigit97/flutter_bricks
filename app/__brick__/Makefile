@@ -29,6 +29,19 @@ masonAdd-%:
 	mason add $* --git-url git@github.com:Nurzhigit97/flutter_bricks.git --git-path $(gitPath)
 	mason get
 
+
+# Usage: make masonRefreshFeature
+masonRefreshFeature:
+	mason remove feature
+	mason add feature --git-url git@github.com:Nurzhigit97/flutter_bricks.git --git-path feature
+	mason get
+
+# Usage: make masonRefreshApp
+masonRefreshApp:
+	mason remove app
+	mason add app --git-url git@github.com:Nurzhigit97/flutter_bricks.git --git-path app
+	mason get
+
 # Usage: make makeFeature featureName=chat listName=chats package=base_app
 # Or: make makeFeature  (Mason will prompt for featureName, listName, package)
 makeFeature:
@@ -39,6 +52,7 @@ makeFeature:
 	else \
 		mason make feature; \
 	fi
+
 
 removeUnusedImports:
 	dart fix --apply --code=unused_import
