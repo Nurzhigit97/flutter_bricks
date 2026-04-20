@@ -24,6 +24,22 @@ generateIcons:
 masonRemove-%:
 	mason remove $*
 
+
+# remove ios pods and podfile.lock and run pod install back to one
+podInstall:
+	rm -rf ios/Pods
+	rm -f ios/Podfile.lock
+	cd ios && pod install 
+	cd ..
+	
+# remove android pods and build.gradle and run ./gradlew clean back to one
+removeAndroidPods:
+	rm -rf android/app/src/main/java/com/work_up
+	rm -f android/app/build.gradle
+	cd android && ./gradlew clean
+
+
+
 # make masonAdd-feature gitPath=bricks/feature
 masonAdd-%:
 	mason add $* --git-url git@github.com:Nurzhigit97/flutter_bricks.git --git-path $(gitPath)
