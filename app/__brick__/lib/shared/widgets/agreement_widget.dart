@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/core/launch/launch.dart';
-import 'package:{{packageName}}/core/theme/theme_extension.dart';
 import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 
 class AgreementCheckbox extends StatelessWidget {
@@ -11,7 +10,7 @@ class AgreementCheckbox extends StatelessWidget {
   Widget build(BuildContext context) {
     final baseStyle = context.bodySmall?.copyWith(
       fontSize: 12,
-      color: context.colors.labelSecondary,
+      color: context.theme.colorScheme.secondary,
     );
     final linkStyle = TextStyle(
       color: context.colorScheme.primary,
