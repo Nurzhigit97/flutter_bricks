@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/controllers/{{featureName.snakeCase()}}_controller.dart';
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/cubits/{{listName}}/{{featureName.snakeCase()}}_cubit.dart';
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/cubits/{{listName}}/{{featureName.snakeCase()}}_state.dart';
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/widgets/{{featureName.snakeCase()}}_widget.dart';
@@ -10,22 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
-class {{featureName.pascalCase()}}Page extends StatelessWidget
-    implements AutoRouteWrapper {
+class {{featureName.pascalCase()}}Page extends StatelessWidget {
   const {{featureName.pascalCase()}}Page({super.key});
-
-  @override
-  Widget wrappedRoute(BuildContext context) {
-    return RepositoryProvider<{{featureName.pascalCase()}}Controller>(
-      create: (_) {
-        final controller = {{featureName.pascalCase()}}Controller();
-        controller.loadIfNeeded(context);
-        return controller;
-      },
-      dispose: (controller) => controller.dispose(),
-      child: this,
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
