@@ -6,6 +6,9 @@ class AppErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text(error));
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Center(child: Text(error, textAlign: TextAlign.center)),
+    );
   }
 }

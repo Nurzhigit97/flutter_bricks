@@ -14,26 +14,24 @@ class {{featureName.pascalCase()}}Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('{{featureName.pascalCase()}}')),
-      body: BlocBuilder<{{featureName.pascalCase()}}Cubit, {{featureName.pascalCase()}}State>(
-        builder: (context, state) {
-          return state.when(
-            loading: () => const AppLoaderWidget(),
-            error: (error) => AppErrorWidget(error: error),
-            loaded: (data) {
-              if (data.isEmpty) return AppEmptyWidget();
-              return ListView.builder(
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  final item = data[index];
-                  return {{featureName.pascalCase()}}Widget({{featureName.camelCase()}}: item);
-                },
-              );
-            },
-          );
-        },
-      ),
+    return BlocBuilder<{{featureName.pascalCase()}}Cubit, {{featureName.pascalCase()}}State>(
+      builder: (context, state) {
+        return state.when(
+          loading: () => const AppLoaderWidget(),
+          error: (error) => AppErrorWidget(error: error),
+          loaded: (data) {
+            if (data.isEmpty) return const AppEmptyWidget();
+            return ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              itemCount: data.length,
+              itemBuilder: (context, index) {
+                final item = data[index];
+                return {{featureName.pascalCase()}}Widget({{featureName.camelCase()}}: item);
+              },
+            );
+          },
+        );
+      },
     );
   }
 }
