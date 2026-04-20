@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 class ScrollToTopWidget extends StatelessWidget {
   const ScrollToTopWidget({
@@ -18,7 +18,7 @@ class ScrollToTopWidget extends StatelessWidget {
         width: 35,
         height: 35,
         child: FloatingActionButton(
-          backgroundColor: AppColors.primaryAccent,
+          backgroundColor: context.colorScheme.primary,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
@@ -28,7 +28,7 @@ class ScrollToTopWidget extends StatelessWidget {
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeInOut,
           ),
-          child: Icon(Icons.arrow_upward, color: AppColors.white),
+          child: Icon(Icons.arrow_upward, color: context.colorScheme.onPrimary),
         ),
       ),
     );

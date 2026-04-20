@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:{{packageName}}/core/helper/extensions.dart';
 import 'package:{{packageName}}/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 
 void onDevState(BuildContext context) {
   if (Theme.of(context).platform == TargetPlatform.iOS) {
@@ -20,7 +20,7 @@ void onDevState(BuildContext context) {
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
                 context.tr.close,
-                style: const TextStyle(color: AppColors.black),
+                style: TextStyle(color: context.colorScheme.onSurface),
               ),
             ),
           ],
@@ -35,14 +35,14 @@ void onDevState(BuildContext context) {
           title: Text(context.tr.inDevelopment),
           content: Text(
             context.tr.thisFunctionInDelevelopmentState,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyle(fontSize: 16),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
                 context.tr.close,
-                style: const TextStyle(color: AppColors.black),
+                style: TextStyle(color: context.colorScheme.onSurface),
               ),
             ),
           ],

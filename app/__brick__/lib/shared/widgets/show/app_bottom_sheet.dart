@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/shared/widgets/app_search_widget.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 /// Unified class for showing bottom sheets across the app
 @immutable
@@ -177,10 +177,11 @@ final class AppBottomSheet {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) {
+        final scheme = context.colorScheme;
         return Container(
           height: MediaQuery.sizeOf(context).height * 0.7,
-          decoration: const BoxDecoration(
-            color: AppColors.white,
+          decoration: BoxDecoration(
+            color: scheme.surface,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -226,14 +227,14 @@ final class AppBottomSheet {
                                 ? FontWeight.w600
                                 : FontWeight.w400,
                             color: isSelected
-                                ? AppColors.focusLight
-                                : AppColors.textMainLight,
+                                ? scheme.primary
+                                : scheme.onSurface,
                           ),
                         ),
                         trailing: isSelected
-                            ? const Icon(
+                            ? Icon(
                                 Icons.check,
-                                color: AppColors.focusLight,
+                                color: scheme.primary,
                               )
                             : null,
                         onTap: () => Navigator.pop(context, item),

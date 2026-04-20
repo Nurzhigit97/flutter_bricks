@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:{{packageName}}/core/helper/extensions.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class AppInputWidget extends StatefulWidget {
   final String? hintText;
@@ -56,7 +55,7 @@ class AppInputWidget extends StatefulWidget {
     this.isFirstInput = false,
     this.onChanged,
     this.onEditingComplete,
-    this.filledColor = AppColors.hintBackColor,
+    this.filledColor,
     this.titleColor,
     this.maxLines = 1,
     this.leading,
@@ -109,6 +108,12 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = context.colorScheme;
+    final defaultFillColor =
+        context.theme.inputDecorationTheme.fillColor ?? scheme.surface;
+    final onSurface = scheme.onSurface;
+    final onSurfaceVariant = scheme.onSurfaceVariant;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -128,7 +133,7 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
                 widget.title!,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: widget.titleColor ?? AppColors.textSecondaryLight,
+                  color: widget.titleColor ?? onSurfaceVariant,
                   fontSize: 14,
                 ),
               ),
@@ -143,7 +148,7 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
           autofocus: widget.autofocus ?? false,
           initialValue: widget.controller == null ? widget.initialValue : null,
           obscureText: widget.isPasswordField == true ? _obsecureText : false,
-          cursorColor: AppColors.black,
+          cursorColor: onSurface,
           inputFormatters: widget.inputFormatters,
 
           onTap: () {
@@ -158,7 +163,7 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
           style:
               widget.inputTextStyle ??
               context.theme.inputDecorationTheme.hintStyle?.copyWith(
-                color: AppColors.black, // Цвет текста при вводе
+                color: onSurface,
               ),
           autofillHints: widget.autofillHints
               ?.map((hint) => AutofillHints.name)
@@ -179,15 +184,16 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
             prefixIcon: widget.prefixIcon,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: widget.borderColor ?? AppColors.transparent,
+                color: widget.borderColor ?? Colors.transparent,
                 width: widget.borderWidth?.width ?? 1.0,
               ),
               borderRadius: BorderRadius.circular(widget.borderRadius ?? 10),
             ),
+
             focusedBorder: widget.isFocus == true
                 ? OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: AppColors.primary,
+                      color: scheme.primary,
                       width: widget.borderWidth?.width ?? 1.0,
                     ),
                     borderRadius: BorderRadius.circular(
@@ -196,7 +202,7 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
                   )
                 : OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: widget.borderColor ?? AppColors.transparent,
+                      color: widget.borderColor ?? Colors.transparent,
                       width: widget.borderWidth?.width ?? 1.0,
                     ),
                     borderRadius: BorderRadius.circular(
@@ -216,18 +222,18 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
               ),
             ),
             filled: true,
-            fillColor: widget.filledColor,
+            fillColor: widget.filledColor ?? defaultFillColor,
             errorMaxLines: 3,
             hintText: widget.hintText,
             prefixIconConstraints: const BoxConstraints(minWidth: 50),
             hintStyle: context.theme.inputDecorationTheme.hintStyle?.copyWith(
-              color: widget.hintColor ?? AppColors.textSecondaryLight,
+              color: widget.hintColor ?? onSurfaceVariant,
             ),
             contentPadding:
                 widget.contentPadding ??
                 const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             suffixIconConstraints: const BoxConstraints(minWidth: 50 - 0.0),
-            suffixIconColor: AppColors.black,
+            suffixIconColor: onSurface,
             suffixIcon:
                 widget.suffixIcon ??
                 (widget.isPasswordField == true
@@ -239,7 +245,7 @@ class _CustomInputWidgetState extends State<AppInputWidget> {
                           _obsecureText
                               ? Icons.visibility_off_outlined
                               : Icons.visibility_outlined,
-                          color: AppColors.grey,
+                          color: onSurfaceVariant,
                         ),
                       )
                     : null),

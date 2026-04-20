@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 import 'package:{{packageName}}/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class StatusErrorCardWidget extends StatelessWidget {
   final int statusCode;
@@ -26,6 +26,7 @@ class StatusErrorCardWidget extends StatelessWidget {
     int statusCode,
     BuildContext context,
   ) {
+    final scheme = Theme.of(context).colorScheme;
     switch (statusCode) {
       case 0: // Сетевая ошибка
         return StatusErrorCardWidget(
@@ -33,8 +34,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: S.of(context).hasntInternet,
           description: S.of(context).checkInternetConnection,
           icon: '📡',
-          color: AppColors.warningLight,
-          backgroundColor: AppColors.warningBGLight,
+          color: scheme.tertiary,
+          backgroundColor: scheme.tertiaryContainer,
         );
       case 400:
         return StatusErrorCardWidget(
@@ -42,8 +43,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '400 - Bad Request',
           description: S.of(context).badRequest,
           icon: '⚠️',
-          color: AppColors.warningLight,
-          backgroundColor: AppColors.warningBGLight,
+          color: scheme.tertiary,
+          backgroundColor: scheme.tertiaryContainer,
         );
       case 401:
         return StatusErrorCardWidget(
@@ -51,8 +52,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '401 - Unauthorized',
           description: S.of(context).unauthorized,
           icon: '🔐',
-          color: AppColors.errorLight,
-          backgroundColor: AppColors.errorBGLight,
+          color: scheme.error,
+          backgroundColor: scheme.errorContainer,
         );
       case 403:
         return StatusErrorCardWidget(
@@ -60,8 +61,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '403 - Forbidden',
           description: S.of(context).forbidden,
           icon: '🚫',
-          color: AppColors.errorLight,
-          backgroundColor: AppColors.errorBGLight,
+          color: scheme.error,
+          backgroundColor: scheme.errorContainer,
         );
       case 404:
         return StatusErrorCardWidget(
@@ -69,8 +70,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '404 - Not Found',
           description: S.of(context).notFound,
           icon: '🔍',
-          color: AppColors.grey,
-          backgroundColor: AppColors.mainLight,
+          color: scheme.onSurfaceVariant,
+          backgroundColor: scheme.surfaceContainerHighest,
         );
       case 500:
         return StatusErrorCardWidget(
@@ -78,8 +79,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '500 - Server Error',
           description: S.of(context).serverError,
           icon: '⚡',
-          color: AppColors.errorLight,
-          backgroundColor: AppColors.errorBGLight,
+          color: scheme.error,
+          backgroundColor: scheme.errorContainer,
         );
       case 502:
         return StatusErrorCardWidget(
@@ -87,8 +88,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '502 - Bad Gateway',
           description: S.of(context).badGateway,
           icon: '🌐',
-          color: AppColors.warningLight,
-          backgroundColor: AppColors.warningBGLight,
+          color: scheme.tertiary,
+          backgroundColor: scheme.tertiaryContainer,
         );
       case 503:
         return StatusErrorCardWidget(
@@ -96,8 +97,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '503 - Service Unavailable',
           description: S.of(context).serviceUnavailable,
           icon: '🛠️',
-          color: AppColors.warningLight,
-          backgroundColor: AppColors.warningBGLight,
+          color: scheme.tertiary,
+          backgroundColor: scheme.tertiaryContainer,
         );
       default:
         return StatusErrorCardWidget(
@@ -105,8 +106,8 @@ class StatusErrorCardWidget extends StatelessWidget {
           title: '${S.of(context).error} $statusCode',
           description: S.of(context).other_error,
           icon: '❌',
-          color: AppColors.errorLight,
-          backgroundColor: AppColors.errorBGLight,
+          color: scheme.error,
+          backgroundColor: scheme.errorContainer,
         );
     }
   }
@@ -159,7 +160,7 @@ class StatusErrorCardWidget extends StatelessWidget {
               //   style: const TextStyle(
               //     fontSize: 14,
               //     fontWeight: FontWeight.w600,
-              //     color: AppColors.textMainLight,
+              //     color: context.colorScheme.onSurface,
               //   ),
               //   maxLines: 2,
               //   overflow: TextOverflow.ellipsis,
@@ -169,10 +170,10 @@ class StatusErrorCardWidget extends StatelessWidget {
                 child: Center(
                   child: Text(
                     description,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
-                      color: AppColors.textSecondaryLight,
+                      color: context.colorScheme.onSurfaceVariant,
                     ),
                     textAlign: TextAlign.center,
                   ),

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 
 @RoutePage()
 class CustomTabbarPage extends StatefulWidget {
@@ -60,7 +60,7 @@ class _CustomTabbarPageState extends State<CustomTabbarPage>
                         border: Border.all(
                           color:
                               _tabController.index == widget.tabs.indexOf(tab)
-                              ? AppColors.primary
+                              ? context.colorScheme.primary
                               : Colors.transparent,
                           width: 1,
                         ),
@@ -70,7 +70,7 @@ class _CustomTabbarPageState extends State<CustomTabbarPage>
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           tab,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                           ),

@@ -1,7 +1,7 @@
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 import 'package:{{packageName}}/shared/widgets/app_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class AuthedGuardDialog extends StatelessWidget {
   final VoidCallback? onTap;
@@ -34,9 +34,9 @@ class AuthedGuardDialog extends StatelessWidget {
             Text(
               S.of(context).cantGetInfoOnyForAuthedusers,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
-                color: AppColors.textSecondaryLight,
+                color: context.colorScheme.onSurface,
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -46,11 +46,11 @@ class AuthedGuardDialog extends StatelessWidget {
                 Expanded(
                   child: AppButtonWidget(
                     onTap: () => Navigator.of(context).pop(),
-                    bgColor: AppColors.scaffoldColor,
-                    textStyle: const TextStyle(
+                    bgColor: context.colorScheme.surface,
+                    textStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.black,
+                      color: context.colorScheme.onSurface,
                     ),
                     title: S.of(context).close,
                   ),
@@ -58,7 +58,7 @@ class AuthedGuardDialog extends StatelessWidget {
                 const SizedBox(width: 16),
                 Expanded(
                   child: AppButtonWidget(
-                    bgColor: AppColors.focusLight,
+                    bgColor: context.colorScheme.primary,
                     onTap: onTap ?? () {},
                     title: buttonText,
                   ),

@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/shared/widgets/app_button_with_icon_widget.dart';
 import 'package:{{packageName}}/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 
 Future<void> selectedDateOfBirthDialog(
   BuildContext context,
@@ -14,7 +14,7 @@ Future<void> selectedDateOfBirthDialog(
   await showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    backgroundColor: AppColors.white,
+    backgroundColor: context.colorScheme.surface,
     useSafeArea: true,
     builder: (context) {
       return SizedBox(
@@ -40,7 +40,7 @@ Future<void> selectedDateOfBirthDialog(
               padding: const EdgeInsets.only(right: 16, bottom: 30, left: 16),
               child: AppButtonWithIconWidget(
                 title: S.of(context).select,
-                bgColor: AppColors.focusLight,
+                bgColor: context.colorScheme.primary,
                 onTap: () {
                   onDateChanged(selectedDate);
                   Navigator.pop(context);

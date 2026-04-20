@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 class AppLoaderWidget extends StatelessWidget {
   final double? size;
@@ -7,17 +7,18 @@ class AppLoaderWidget extends StatelessWidget {
   const AppLoaderWidget({super.key, this.size, this.color});
   @override
   Widget build(BuildContext context) {
+    final scheme = context.colorScheme;
     return Center(
       child: SizedBox(
         width: size ?? 40,
         height: size ?? 40,
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: scheme.surface,
             borderRadius: BorderRadius.circular(size ?? 8),
             boxShadow: [
               BoxShadow(
-                color: AppColors.textSecondaryLight.withValues(alpha: 0.2),
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.2),
                 blurRadius: 4,
                 offset: const Offset(0, -2),
                 spreadRadius: 0,
@@ -28,9 +29,7 @@ class AppLoaderWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: CircularProgressIndicator.adaptive(
-                valueColor: AlwaysStoppedAnimation(
-                  color ?? AppColors.primaryAccent,
-                ),
+                valueColor: AlwaysStoppedAnimation(color ?? scheme.primary),
 
                 strokeWidth: size ?? 2,
               ),

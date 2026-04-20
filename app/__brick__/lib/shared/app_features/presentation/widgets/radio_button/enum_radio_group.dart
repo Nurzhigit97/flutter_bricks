@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 import 'package:{{packageName}}/shared/app_features/presentation/widgets/radio_button/enum_radio_option.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class EnumRadioGroup<T> extends StatelessWidget {
   final String label;
@@ -25,10 +25,10 @@ class EnumRadioGroup<T> extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: AppColors.hintColor,
+            color: context.colorScheme.onSurface,
           ),
         ),
         Wrap(
@@ -40,7 +40,7 @@ class EnumRadioGroup<T> extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Radio<T>(
-                  activeColor: AppColors.focusLight,
+                  activeColor: context.colorScheme.primary,
 
                   value: option.value,
                   // ignore: deprecated_member_use

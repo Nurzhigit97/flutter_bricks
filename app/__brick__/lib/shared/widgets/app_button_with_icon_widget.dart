@@ -1,6 +1,6 @@
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 
 class AppButtonWithIconWidget extends StatelessWidget {
   final VoidCallback? onTap;
@@ -42,33 +42,20 @@ class AppButtonWithIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = context.colorScheme;
+    final onPrimary = scheme.onPrimary;
+    final primary = scheme.primary;
+
     final effectiveBorderRadius = borderRadius ?? 12;
+    final effectiveIconColor = iconColor ?? onPrimary;
 
     final button = ElevatedButton.icon(
-      icon: icon != null
-          ? Icon(icon, color: iconColor ?? AppColors.white, size: 20)
-          : (image != null
-                ? imageType == 'svg'
-                      ? SvgPicture.asset(
-                          '$image',
-                          colorFilter: ColorFilter.mode(
-                            iconColor ?? AppColors.white,
-                            BlendMode.srcIn,
-                          ),
-                        )
-                      : Image.asset(
-                          '$image',
-                          width: 24,
-                          height: 24,
-                          color: iconColor ?? AppColors.white,
-                          fit: BoxFit.contain,
-                        )
-                : const SizedBox.shrink()),
+      icon: _buildLeading(effectiveIconColor),
       onPressed: isLoading == true ? null : onTap,
       style: ElevatedButton.styleFrom(
         foregroundColor: borderColor != null
             ? borderColor!.withAlpha(1)
-            : AppColors.primaryAccent,
+            : primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(effectiveBorderRadius),
           side: backgroundGradient == null && borderColor != null
@@ -78,24 +65,24 @@ class AppButtonWithIconWidget extends StatelessWidget {
         padding: padding ?? EdgeInsets.zero,
         backgroundColor: backgroundGradient != null
             ? Colors.transparent
-            : bgColor ?? AppColors.primary,
+            : bgColor ?? primary,
         minimumSize: Size(width ?? double.infinity, height ?? 50),
         maximumSize: Size(width ?? double.infinity, height ?? 50),
         shadowColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
       ),
       label: isLoading == true
-          ? const SizedBox(
+          ? SizedBox(
               width: 25,
               height: 25,
-              child: CircularProgressIndicator(color: Colors.white),
+              child: CircularProgressIndicator(color: onPrimary),
             )
           : Text(
               title,
               style:
                   textStyle ??
-                  const TextStyle(
-                    color: AppColors.white,
+                  TextStyle(
+                    color: onPrimary,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
@@ -116,6 +103,28 @@ class AppButtonWithIconWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(effectiveBorderRadius),
         child: button,
       ),
+    );
+  }
+
+  Widget _buildLeading(Color color) {
+    if (icon != null) {
+      return Icon(icon, color: color, size: 20);
+    }
+    if (image == null) {
+      return const SizedBox.shrink();
+    }
+    if (imageType == 'svg') {
+      return SvgPicture.asset(
+        image!,
+        colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+      );
+    }
+    return Image.asset(
+      image!,
+      width: 24,
+      height: 24,
+      color: color,
+      fit: BoxFit.contain,
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 class BottomNavDecorator extends StatelessWidget {
   final Widget child;
@@ -8,16 +8,17 @@ class BottomNavDecorator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = context.colorScheme;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: scheme.surface,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.textSecondaryLight.withValues(alpha: 0.1),
+            color: scheme.onSurfaceVariant.withValues(alpha: 0.1),
             blurRadius: 4,
             offset: const Offset(0, -4),
             spreadRadius: 0.5,

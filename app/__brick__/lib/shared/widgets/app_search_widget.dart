@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/core/helper/extensions.dart';
 import 'package:{{packageName}}/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 import 'dart:async';
 
 class AppSearchWidget extends StatefulWidget {
@@ -60,6 +59,7 @@ class _AppSearchWidgetState extends State<AppSearchWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = context.colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +70,7 @@ class _AppSearchWidgetState extends State<AppSearchWidget> {
             widget.title!,
             style: context.theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w500,
-              color: AppColors.textSecondaryLight,
+              color: scheme.onSurfaceVariant,
               fontSize: 14,
             ),
           ),
@@ -92,7 +92,7 @@ class _AppSearchWidgetState extends State<AppSearchWidget> {
 
           decoration: InputDecoration(
             filled: true,
-            fillColor: AppColors.mainLight,
+            fillColor: scheme.surfaceContainerHighest,
             errorBorder: InputBorder.none,
             constraints: const BoxConstraints(minHeight: 32, maxHeight: 40),
 
@@ -101,29 +101,29 @@ class _AppSearchWidgetState extends State<AppSearchWidget> {
               horizontal: 12,
               vertical: 8,
             ),
-            prefixIcon: const Padding(
-              padding: EdgeInsets.only(left: 8, right: 4),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.only(left: 8, right: 4),
               child: Icon(
                 Icons.search,
-                color: AppColors.textSecondaryLight,
+                color: scheme.onSurfaceVariant,
                 size: 18,
               ),
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.mainLight),
+              borderSide: BorderSide(color: scheme.surfaceContainerHighest),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.mainLight),
+              borderSide: BorderSide(color: scheme.surfaceContainerHighest),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.mainLight),
+              borderSide: BorderSide(color: scheme.primary),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.errorBGDark),
+              borderSide: BorderSide(color: scheme.error),
             ),
 
             suffixIcon: _controller.text.isNotEmpty
@@ -133,9 +133,9 @@ class _AppSearchWidgetState extends State<AppSearchWidget> {
                       minWidth: 30,
                       minHeight: 30,
                     ),
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.clear,
-                      color: AppColors.textSecondaryLight,
+                      color: scheme.onSurfaceVariant,
                       size: 16,
                     ),
                     onPressed: () {
@@ -147,10 +147,7 @@ class _AppSearchWidgetState extends State<AppSearchWidget> {
                   )
                 : null,
             hintText: widget.hintText ?? S.of(context).search,
-            hintStyle: const TextStyle(
-              color: AppColors.textSecondaryLight,
-              fontSize: 14,
-            ),
+            hintStyle: TextStyle(color: scheme.onSurfaceVariant, fontSize: 14),
           ),
           style: const TextStyle(fontSize: 14),
         ),

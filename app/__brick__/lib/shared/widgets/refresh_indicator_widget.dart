@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/helper/extensions.dart';
 
 class RefreshIndicatorWidget extends StatelessWidget {
   final VoidCallback onRefresh;
@@ -13,8 +13,8 @@ class RefreshIndicatorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      color: AppColors.focusLight,
-      backgroundColor: AppColors.white,
+      color: context.colorScheme.primary,
+      backgroundColor: context.colorScheme.surface,
       onRefresh: () async => onRefresh(),
       child: child,
     );

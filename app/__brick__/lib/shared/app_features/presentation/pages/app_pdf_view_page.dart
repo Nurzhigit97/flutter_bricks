@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:dio/dio.dart';
@@ -341,7 +341,7 @@ class _AppPdfViewPageState extends State<AppPdfViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: context.colorScheme.surface,
       appBar: AppBar(
         actions: [
           PopupMenuButton<String>(
@@ -404,9 +404,9 @@ class _AppPdfViewPageState extends State<AppPdfViewPage> {
             child: Text(
               _downloadStatus,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 16,
-                color: AppColors.primaryColor,
+                color: context.colorScheme.primary,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -425,11 +425,11 @@ class _AppPdfViewPageState extends State<AppPdfViewPage> {
                     child: LinearProgressIndicator(
                       value: _downloadProgress,
                       minHeight: 8,
-                      backgroundColor: AppColors.primaryColor.withValues(
+                      backgroundColor: context.colorScheme.primary.withValues(
                         alpha: 0.2,
                       ),
-                      valueColor: const AlwaysStoppedAnimation<Color>(
-                        AppColors.primaryColor,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        context.colorScheme.primary,
                       ),
                     ),
                   ),
@@ -438,10 +438,10 @@ class _AppPdfViewPageState extends State<AppPdfViewPage> {
                   // Процент загрузки крупным шрифтом
                   Text(
                     '${(_downloadProgress * 100).toStringAsFixed(0)}%',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.primaryColor,
+                      color: context.colorScheme.primary,
                     ),
                   ),
                 ],
@@ -497,9 +497,9 @@ class _AppPdfViewPageState extends State<AppPdfViewPage> {
     }
 
     return SfPdfViewerTheme(
-      data: const SfPdfViewerThemeData(
-        backgroundColor: AppColors.white,
-        progressBarColor: AppColors.primaryColor,
+      data: SfPdfViewerThemeData(
+        backgroundColor: context.colorScheme.surface,
+        progressBarColor: context.colorScheme.primary,
       ),
       child: _cachedFilePath != null
           ? SfPdfViewer.file(

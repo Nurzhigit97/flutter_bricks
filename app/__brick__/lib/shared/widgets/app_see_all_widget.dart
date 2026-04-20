@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/core/helper/extensions.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class AppSeeAllWidget extends StatelessWidget {
   final String title;
@@ -36,7 +35,7 @@ class AppSeeAllWidget extends StatelessWidget {
                     onTap: onTap,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: color ?? AppColors.bgButton,
+                        color: color ?? context.colorScheme.primary,
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: const Padding(

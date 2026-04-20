@@ -1,4 +1,4 @@
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
+import 'package:{{packageName}}/core/utils/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class AppButtonWidget extends StatelessWidget {
@@ -34,14 +34,14 @@ class AppButtonWidget extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         foregroundColor: borderColor != null
             ? borderColor!.withAlpha(1)
-            : AppColors.primaryAccent,
+            : context.colorScheme.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 12),
           side: borderColor != null
               ? BorderSide(color: borderColor!)
               : BorderSide.none,
         ),
-        backgroundColor: bgColor ?? AppColors.primary,
+        backgroundColor: bgColor ?? context.colorScheme.primary,
         shadowColor: Colors.transparent,
         padding:
             padding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -51,10 +51,10 @@ class AppButtonWidget extends StatelessWidget {
         title,
         style:
             textStyle ??
-            const TextStyle(
+            TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
-              color: AppColors.white,
+              color: context.colorScheme.onSurface,
             ),
       ),
     );

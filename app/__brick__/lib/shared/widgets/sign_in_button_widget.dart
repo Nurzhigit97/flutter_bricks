@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:{{packageName}}/core/helper/extensions.dart';
 import 'package:{{packageName}}/core/translation/generated/l10n.dart';
-import 'package:{{packageName}}/core/theme/styles/app_colors.dart';
 
 class SignInButtonWidget extends StatelessWidget {
   const SignInButtonWidget({super.key});
@@ -22,14 +21,14 @@ class SignInButtonWidget extends StatelessWidget {
               height: 32,
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: AppColors.focusLight,
+                  color: context.colorScheme.primary,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
                   child: Text(
                     S.of(context).signIn2,
                     style: context.theme.textTheme.labelLarge?.copyWith(
-                      color: AppColors.white,
+                      color: context.colorScheme.onPrimary,
                     ),
                   ),
                 ),
