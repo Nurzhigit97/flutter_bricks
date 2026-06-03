@@ -26,7 +26,6 @@ const _requiredDevDependencies = <String, String>{
 
 Future<void> run(HookContext context) async {
   await _ensureDependencies(context);
-  await _renameFeatureDir(context);
   await _registerFeatureInjection(context);
 }
 
@@ -110,18 +109,6 @@ String _injectDepsSection(String content, String sectionName, List<String> lines
   return content.substring(0, insertPos) +
       newBlock +
       content.substring(endOfSection);
-}
-
-Future<void> _renameFeatureDir(HookContext context) async {
-  final featureName = context.vars['featureName'] as String? ?? 'feature';
-  final dir = Directory('lib/features/feature');
-  final target = Directory('lib/features/$featureName');
-  if (dir.existsSync()) {
-    if (target.existsSync()) {
-      target.deleteSync(recursive: true);
-    }
-    dir.renameSync('lib/features/$featureName');
-  }
 }
 
 const _featureInjectionsPath = 'lib/core/utils/config/feature_injections.dart';

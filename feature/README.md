@@ -68,9 +68,11 @@ mason make feature
 ```
 
 Переменные:
-- **featureName** — имя фичи в snake_case (например `chat`, `notification2`)
-- **listName** — имя папки cubits в snake_case (например `chats`, `notifications`)
+- **featureName** — имя фичи в snake_case (например `chat`, `withdrawal`)
+- **listName** — имя папки cubits в snake_case (например `chats`, `banks`)
 - **package** — имя пакета (по умолчанию `base_app`)
+
+Код генерируется в `lib/features/<featureName>/` (не в `lib/features/feature/`).
 
 ## Зависимости
 

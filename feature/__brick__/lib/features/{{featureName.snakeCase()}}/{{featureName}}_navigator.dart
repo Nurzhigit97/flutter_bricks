@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/controllers/{{featureName.snakeCase()}}_controller.dart';
+import 'package:{{package}}/core/utils/extensions/on_future_either.dart';
 import 'package:{{package}}/features/{{featureName.snakeCase()}}/presentation/cubits/{{listName}}/{{featureName.snakeCase()}}_cubit.dart';
 import 'package:{{package}}/core/utils/injections.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +11,9 @@ class {{featureName.pascalCase()}}Navigator extends StatelessWidget implements A
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider<{{featureName.pascalCase()}}Cubit>(
-      create: (_) => sl<{{featureName.pascalCase()}}Cubit>()..load{{featureName.pascalCase()}}(),
-      child: RepositoryProvider(
-        create: (_) => {{featureName.pascalCase()}}Controller(),
-        dispose: (controller) => controller.dispose(),
-        child: this,
-      ),
+    return BlocProvider(
+      create: (_) => sl<{{featureName.pascalCase()}}Cubit>()..load{{featureName.pascalCase()}}().withEasyLoading(),
+      child: this,
     );
   }
 
