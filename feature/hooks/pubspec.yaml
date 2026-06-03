@@ -1,12 +1,10 @@
-name: list_detail_feature_hooks
+name: feature_hooks
+description: Post-gen hook for the feature brick.
+publish_to: none
+
 environment:
   sdk: ">=3.0.0 <4.0.0"
+
 dependencies:
-  json_annotation: ">=4.8.0 <4.10.0"
-  json_serializable: ^6.11.2
   mason: any
   yaml: ^3.1.2
-
-dependency_overrides:
-  json_annotation: "4.9.0"
-  mustache_template: "2.0.2"

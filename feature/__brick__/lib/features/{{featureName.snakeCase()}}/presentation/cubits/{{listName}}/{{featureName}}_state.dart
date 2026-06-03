@@ -8,7 +8,7 @@ sealed class {{featureName.pascalCase()}}State with _${{featureName.pascalCase()
 
   const factory {{featureName.pascalCase()}}State.loading() = _{{featureName.pascalCase()}}Loading;
   const factory {{featureName.pascalCase()}}State.loaded(
-    List<{{featureName.pascalCase()}}Model> data,
+    List<{const {featureName.pascalCase()}}Model> data,
   ) = _{{featureName.pascalCase()}}Loaded;
   const factory {{featureName.pascalCase()}}State.error({required String error}) = _{{featureName.pascalCase()}}Error;
 }

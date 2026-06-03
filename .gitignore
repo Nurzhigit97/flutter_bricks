@@ -25,3 +25,7 @@ credentials*.json
 .idea/
 .vscode/
 .tmp_*
+
+# Mason hooks — never commit machine-local package_config
+**/hooks/.dart_tool/
+**/hooks/build/

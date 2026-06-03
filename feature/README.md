@@ -80,6 +80,19 @@ mason make feature
 
 **В новом проекте** эти зависимости не нужно копировать вручную: post-gen хук при `mason make feature` добавляет в `pubspec.yaml` только отсутствующие пакеты.
 
+## Ошибка компиляции hook (`mason.dart: No such file or directory`)
+
+Обычно из‑за закоммиченного `feature/hooks/.dart_tool/` с путями чужой машины. В репозитории этот каталог в `.gitignore`. После обновления brick:
+
+```bash
+mason get
+# при необходимости обновить кэш git-brick:
+mason remove feature && mason add feature --git-url <url> --git-path feature
+mason make feature
+```
+
+Локально в brick можно проверить: `cd feature/hooks && dart pub get`.
+
 ## После генерации
 
 1. Запусти build_runner для Freezed и json_serializable:
