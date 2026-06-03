@@ -6,7 +6,7 @@
 
 | Brick   | Описание |
 |--------|----------|
-| **app**    | Базовое приложение: `main.dart`, `app.dart`, скелет `shared/`, `mason.yaml`, `Makefile`, `.fvmrc`, `assets/`. |
+| **app**    | Базовое приложение: `main.dart`, `app.dart`, `lib/core/`, `lib/shared/`, `lib/features/`, `mason.yaml`, `Makefile`, `.fvmrc`, `assets/`. |
 | **feature**| Фича: data (repository, impl, datasource, models), presentation (cubits, pages, widgets), injection, navigator. |
 
 ---
@@ -68,7 +68,7 @@ echo '{"packageName":"my_app"}' > .mason_app_config.json
 mason make app -c .mason_app_config.json
 ```
 
-Будут созданы/перезаписаны: `lib/main.dart`, `lib/app.dart`, скелет `lib/shared/`, корневые `mason.yaml`, `Makefile`, `.fvmrc`, папка `assets/`. В корне появится файл **`pubspec_brick_dependencies.yaml`** со списком зависимостей — добавь их в свой `pubspec.yaml` (секция `dependencies` и при необходимости `dev_dependencies`), затем выполни `flutter pub get`.
+Будут созданы/перезаписаны: `lib/main.dart`, `lib/app.dart`, скелет `lib/core/`, `lib/shared/`, `lib/features/`, корневые `mason.yaml`, `Makefile`, `.fvmrc`, папка `assets/`. В корне появится файл **`pubspec_brick_dependencies.yaml`** со списком зависимостей — добавь их в свой `pubspec.yaml` (секция `dependencies` и при необходимости `dev_dependencies`), затем выполни `flutter pub get`.
 
 ### 4. Генерация фичи (brick `feature`)
 
@@ -99,7 +99,7 @@ mason make feature -c .mason_feature_config.json
 
 Дальше нужно:
 
-1. Зарегистрировать фичу в DI — вызвать `<feature>Injection()` в `initInjections()` или добавить в `featureInjections` в `lib/shared/utils/config/feature_injections.dart`.
+1. Зарегистрировать фичу в DI — вызвать `<feature>Injection()` в `initInjections()` или добавить в `featureInjections` в `lib/core/utils/config/feature_injections.dart`.
 2. Добавить маршрут в роутер (auto_route и т.п.), если используешь этот brick с существующим роутингом.
 
 ### 5. Makefile (если сгенерировали через brick `app`)
