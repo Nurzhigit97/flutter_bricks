@@ -15,6 +15,7 @@
 google-services.json
 GoogleService-Info.plist
 firebase_options.dart
+!app/__brick__/lib/firebase_options.dart
 service-account*.json
 credentials*.json
 

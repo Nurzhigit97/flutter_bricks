@@ -6,8 +6,8 @@ import 'package:{{packageName}}/core/services/storage/local_storage.dart';
 import 'package:{{packageName}}/core/services/storage/secure_storage.dart';
 import 'package:{{packageName}}/core/utils/config/app_env.dart';
 import 'package:{{packageName}}/core/utils/constants/app_const/app_const.dart';
-import 'package:{{packageName}}/features/auth/data/models/auth/login_response.dart';
-import 'package:{{packageName}}/features/auth/data/models/auth/refresh_token_request.dart';
+import 'package:{{packageName}}/shared/app_features/data/models/auth/login_response.dart';
+import 'package:{{packageName}}/shared/app_features/data/models/auth/refresh_token_request.dart';
 
 /// Хранение access/refresh токенов и обновление сессии через API.
 class SessionManager {
