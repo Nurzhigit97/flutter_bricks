@@ -91,7 +91,7 @@ class FCMService {
         );
 
     await _localNotifications.initialize(
-      settings: initializationSettings,
+      initializationSettings,
       onDidReceiveNotificationResponse: _onNotificationTapped,
     );
 
@@ -255,10 +255,10 @@ class FCMService {
     final payloadJson = jsonEncode(message.data);
 
     await _localNotifications.show(
-      id: message.hashCode,
-      title: message.notification?.title ?? 'Новое уведомление',
-      body: message.notification?.body ?? '',
-      notificationDetails: platformChannelSpecifics,
+      message.hashCode,
+      message.notification?.title ?? 'Новое уведомление',
+      message.notification?.body ?? '',
+      platformChannelSpecifics,
       payload: payloadJson,
     );
   }
